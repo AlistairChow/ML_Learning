@@ -1,3 +1,5 @@
+# -*- coding: utf8 -*-
+
 class Movie():
     def __init__(self, movie_title, movie_stroyline, poster_image_url, trailer_url):
         self.title = movie_title

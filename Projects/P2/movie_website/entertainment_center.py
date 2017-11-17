@@ -1,4 +1,6 @@
 import media
+# -*- coding: utf8 -*-
+
 import fresh_tomatoes
 
 gong_shou_dao = media.Movie("功守道","人民币玩家大战屌丝","http://g3.ykimg.com/051600005A07EC22ADBC092D8C0A7FB4","http://v.youku.com/v_show/id_XMzE0ODM1ODg1Ng==.html?spm=a2h0k.8191407.0.0&from=s1.8-3-1.1")
