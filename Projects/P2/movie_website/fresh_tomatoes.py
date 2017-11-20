@@ -125,6 +125,7 @@ movie_tile_content = '''
 </div>
 '''
 
+
 def create_movie_tiles_content(movies):
     # The HTML content for this section of the page
     content = ''
@@ -148,6 +149,7 @@ def create_movie_tiles_content(movies):
             trailer_src=trailer_src
         )
     return content
+
 
 def open_movies_page(movies):
   # Create or overwrite the output file
