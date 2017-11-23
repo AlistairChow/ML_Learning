@@ -23,7 +23,20 @@ class Plane(object):
 
         self.set_basepoint()
 
+    def is_parallel_to(self, p):
+        '''
+        两平面是否平行
+        通过检验法向量是否平行得出结论
+        :param p:
+        :return:
+        '''
+        return self.normal_vector.is_parallel_to(p.normal_vector)
+
     def set_basepoint(self):
+        '''
+        设置基点
+        :return:
+        '''
         try:
             n = self.normal_vector
             c = self.constant_term
@@ -40,6 +53,30 @@ class Plane(object):
                 self.basepoint = None
             else:
                 raise e
+
+    def __eq__(self, p):
+        '''
+        两平面是否重合
+        :param p:
+        :return:
+        '''
+        if self.normal_vector.is_zero():
+            if not p.normal_vector.is_zero():
+                return False
+            else:
+                return self.constant_term == p.constant_term
+        elif p.normal_vector.is_zero():
+            return False
+
+        if not self.is_parallel_to(p):
+            return False
+
+        x0 = self.basepoint
+        y0 = p.basepoint
+        basepoint_difference = x0.minus(y0)
+
+        n = self.normal_vector
+        return basepoint_difference.is_orthogonal_to(n)
 
     def __str__(self):
 

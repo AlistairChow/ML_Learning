@@ -35,20 +35,19 @@ class Line(object):
 
     def __eq__(self, ell):
         '''
-        两线性方程是否为同一直线
+        两直线是否重合
         :param ell:
         :return:
         '''
         if self.normal_vector.is_zero():
             #如果法向量为0，那么每个变量系数为0
             #检测常量系数是否相等
-            #常量系数相等则两条直线为同一直线
-            #如果不同则不是同一直线
+            #常量系数相等则两条直线重合
+            #如果不同则不重合
             if not ell.normal_vector.is_zero():
                 return False
             else:
-                diff = self.constant_term - ell.constant_term
-                return MyDecimal(diff).is_near_zero()
+                return self.constant_term == ell.constant_term
         elif ell.normal_vector.is_zero():
             return False
 
@@ -115,9 +114,9 @@ class Line(object):
 
     def is_parallel_to(self, ell):
         '''
-        两线性方程是否平行
+        两直线是否平行
         通过检验法向量是否平行得出结论
-        :param v:
+        :param ell:
         :return:
         '''
         return self.normal_vector.is_parallel_to(ell.normal_vector)
