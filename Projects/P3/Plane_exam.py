@@ -17,3 +17,4 @@ p1 = Plane(normal_vector=Vector(['-7.926', '8.625', '-7.212']), constant_term='-
 p2 = Plane(normal_vector=Vector(['-2.642', '2.875', '-2.404']), constant_term='-2.443')
 print p1.is_parallel_to(p2)
 print p1 == p2
+

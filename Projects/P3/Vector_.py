@@ -53,7 +53,7 @@ class Vector(object):
         向量的模
         :return:
         '''
-        return sum([x**2 for x in self.coordinates]) ** Decimal('0.5')
+        return sum([x**2 for x in self.coordinates]).sqrt()
 
     def normalized(self):
         '''
