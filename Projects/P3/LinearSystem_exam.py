@@ -4,6 +4,7 @@ from Vector_ import Vector
 from Plane import Plane
 from LinearSystem import LinearSystem
 from decimal import Decimal
+from Hyperplane import Hyperplane
 
 p0 = Plane(normal_vector=Vector(['1', '1', '1']), constant_term='1')
 p1 = Plane(normal_vector=Vector(['0', '1', '0']), constant_term='2')
@@ -180,3 +181,20 @@ p3 = Plane(normal_vector=Vector(['0.374', '0.704', '-3.746']), constant_term='-3
 p4 = Plane(normal_vector=Vector(['-0.561', '-1.056', '5.619']), constant_term='5.973')
 s = LinearSystem([p1, p2, p3, p4])
 print 'System 3 solution:\n{}'.format(s.compute_solution())
+
+p1 = Hyperplane(normal_vector=Vector(['0.786', '0.786']), constant_term='-0.714')
+p2 = Hyperplane(normal_vector=Vector(['-0.131', '-0.131']), constant_term='0.319')
+s = LinearSystem([p1, p2])
+print 'System 1 solution:\n{}'.format(s.compute_solution())
+
+p1 = Hyperplane(normal_vector=Vector(['2.102', '7.489', '-0.786']), constant_term='-0.714')
+p2 = Hyperplane(normal_vector=Vector(['-1.131', '-8.318', '1.209']), constant_term='0.319')
+p3 = Hyperplane(normal_vector=Vector(['9.015', '-5.873', '1.105']), constant_term='0.319')
+s = LinearSystem([p1, p2, p3])
+print 'System 2 solution:\n{}'.format(s.compute_solution())
+
+p1 = Hyperplane(normal_vector=Vector(['0.786', '0.786', '8.123', '1.111', '-8.363']), constant_term='-0.714')
+p2 = Hyperplane(normal_vector=Vector(['-0.131', '0.131', '7.05', '-2.813', '1.19']), constant_term='0.319')
+p3 = Hyperplane(normal_vector=Vector(['9.015', '-5.873', '-1.105', '2.013', '-2.802']), constant_term='0.319')
+s = LinearSystem([p1, p2, p3])
+print 'System 2 solution:\n{}'.format(s.compute_solution())

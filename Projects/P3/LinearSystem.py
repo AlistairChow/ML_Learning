@@ -4,7 +4,7 @@ from decimal import Decimal, getcontext
 from copy import deepcopy
 
 from Vector_ import Vector
-from Plane import Plane
+from Hyperplane import Hyperplane
 
 getcontext().prec = 30
 
@@ -271,7 +271,7 @@ class LinearSystem(object):
             try:
                 indices[i] = p.first_nonzero_index(p.normal_vector)
             except Exception as e:
-                if str(e) == Plane.NO_NONZERO_ELTS_FOUND_MSG:
+                if str(e) == Hyperplane.NO_NONZERO_ELTS_FOUND_MSG:
                     continue
                 else:
                     raise e

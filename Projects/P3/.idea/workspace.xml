@@ -13,10 +13,11 @@
     <SUITE FILE_PATH="coverage/P3$Plane_exam.coverage" NAME="Plane_exam Coverage Results" MODIFIED="1511489790275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/P3$Vector.coverage" NAME="Vector Coverage Results" MODIFIED="1511227217684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/P3$main.coverage" NAME="main Coverage Results" MODIFIED="1511337793208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/P3$Hyperplane.coverage" NAME="Hyperplane Coverage Results" MODIFIED="1511835437795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/P3$test.coverage" NAME="test Coverage Results" MODIFIED="1511785478924" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/P3$Line_exam.coverage" NAME="Line_exam Coverage Results" MODIFIED="1511420881931" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/P3$LinearSystem_exam.coverage" NAME="LinearSystem_exam Coverage Results" MODIFIED="1511834838240" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/P3$LinearSystem.coverage" NAME="LinearSystem Coverage Results" MODIFIED="1511832002431" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/P3$LinearSystem_exam.coverage" NAME="LinearSystem_exam Coverage Results" MODIFIED="1511836198519" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/P3$LinearSystem.coverage" NAME="LinearSystem Coverage Results" MODIFIED="1511835668031" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -35,8 +36,20 @@
       <file leaf-file-name="Plane.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Plane.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-129">
-              <caret line="82" column="8" lean-forward="false" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="30" />
+            <state relative-caret-position="90">
+              <caret line="5" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="134" selection-end-column="30" />
+              <folding>
+                <element signature="e#45#84#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Hyperplane.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Hyperplane.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="11" column="25" lean-forward="false" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
               <folding>
                 <element signature="e#45#84#0" expanded="true" />
               </folding>
@@ -56,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LinearSystem.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LinearSystem.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LinearSystem.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="332" column="8" lean-forward="true" selection-start-line="332" selection-start-column="8" selection-end-line="332" selection-end-column="8" />
+            <state relative-caret-position="362">
+              <caret line="273" column="39" lean-forward="false" selection-start-line="273" selection-start-column="39" selection-end-line="273" selection-end-column="39" />
               <folding>
                 <element signature="e#45#84#0" expanded="true" />
               </folding>
@@ -68,11 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LinearSystem_exam.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LinearSystem_exam.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/LinearSystem_exam.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="174" column="49" lean-forward="false" selection-start-line="174" selection-start-column="49" selection-end-line="174" selection-end-column="49" />
+            <state relative-caret-position="382">
+              <caret line="197" column="83" lean-forward="false" selection-start-line="197" selection-start-column="83" selection-end-line="197" selection-end-column="83" />
               <folding>
                 <element signature="e#45#71#0" expanded="true" />
               </folding>
@@ -131,8 +144,9 @@
         <option value="$PROJECT_DIR$/Plane_exam.py" />
         <option value="$PROJECT_DIR$/Plane.py" />
         <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/LinearSystem_exam.py" />
+        <option value="$PROJECT_DIR$/Hyperplane.py" />
         <option value="$PROJECT_DIR$/LinearSystem.py" />
+        <option value="$PROJECT_DIR$/LinearSystem_exam.py" />
       </list>
     </option>
   </component>
@@ -194,7 +208,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.LinearSystem_exam">
-    <configuration name="Line_exam" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Hyperplane" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -207,7 +221,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="P3" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Line_exam.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Hyperplane.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -285,19 +299,19 @@
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.Line_exam" />
-      <item index="1" class="java.lang.String" itemvalue="Python.Plane_exam" />
-      <item index="2" class="java.lang.String" itemvalue="Python.LinearSystem" />
-      <item index="3" class="java.lang.String" itemvalue="Python.LinearSystem_exam" />
-      <item index="4" class="java.lang.String" itemvalue="Python.test" />
+      <item index="0" class="java.lang.String" itemvalue="Python.Plane_exam" />
+      <item index="1" class="java.lang.String" itemvalue="Python.LinearSystem" />
+      <item index="2" class="java.lang.String" itemvalue="Python.LinearSystem_exam" />
+      <item index="3" class="java.lang.String" itemvalue="Python.test" />
+      <item index="4" class="java.lang.String" itemvalue="Python.Hyperplane" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.LinearSystem_exam" />
         <item index="1" class="java.lang.String" itemvalue="Python.LinearSystem" />
-        <item index="2" class="java.lang.String" itemvalue="Python.test" />
-        <item index="3" class="java.lang.String" itemvalue="Python.Plane_exam" />
-        <item index="4" class="java.lang.String" itemvalue="Python.Line_exam" />
+        <item index="2" class="java.lang.String" itemvalue="Python.Hyperplane" />
+        <item index="3" class="java.lang.String" itemvalue="Python.test" />
+        <item index="4" class="java.lang.String" itemvalue="Python.Plane_exam" />
       </list>
     </recent_temporary>
   </component>
@@ -362,7 +376,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/LinearSystem_exam.py</url>
-          <line>174</line>
+          <line>175</line>
           <option name="timeStamp" value="71" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -546,16 +560,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Plane.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-129">
-          <caret line="82" column="8" lean-forward="false" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="30" />
-          <folding>
-            <element signature="e#45#84#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Plane_exam.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -566,22 +570,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LinearSystem_exam.py">
+    <entry file="file://$PROJECT_DIR$/Plane.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="174" column="49" lean-forward="false" selection-start-line="174" selection-start-column="49" selection-end-line="174" selection-end-column="49" />
+        <state relative-caret-position="90">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="134" selection-end-column="30" />
           <folding>
-            <element signature="e#45#71#0" expanded="true" />
+            <element signature="e#45#84#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Hyperplane.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="25" lean-forward="false" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+          <folding>
+            <element signature="e#45#84#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LinearSystem.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="332" column="8" lean-forward="true" selection-start-line="332" selection-start-column="8" selection-end-line="332" selection-end-column="8" />
+        <state relative-caret-position="362">
+          <caret line="273" column="39" lean-forward="false" selection-start-line="273" selection-start-column="39" selection-end-line="273" selection-end-column="39" />
           <folding>
             <element signature="e#45#84#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LinearSystem_exam.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="197" column="83" lean-forward="false" selection-start-line="197" selection-start-column="83" selection-end-line="197" selection-end-column="83" />
+          <folding>
+            <element signature="e#45#71#0" expanded="true" />
           </folding>
         </state>
       </provider>
