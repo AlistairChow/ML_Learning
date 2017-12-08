@@ -1,7 +1,8 @@
 
 # coding: utf-8
 
-# In[163]:
+# In[1]:
+
 
 # 任意选一个你喜欢的整数，这能帮你得到稳定的结果
 seed = 9999
@@ -19,7 +20,8 @@ seed = 9999
 # 
 # ## 1.1 创建一个 4*4 的单位矩阵
 
-# In[1]:
+# In[2]:
+
 
 # 这个项目设计来帮你熟悉 python list 和线性代数
 # 你不能调用任何NumPy以及相关的科学计算库来完成作业
@@ -40,15 +42,16 @@ C = [[1],
      [3]]
 
 #TODO 创建一个 4*4 单位矩阵
-I = [[1,2,3,4],
-     [2,3,4,5],
-     [3,4,5,6],
-     [4,5,6,7]]
+I = [[1,0,0,0],
+     [0,1,0,0],
+     [0,0,1,0],
+     [0,0,0,1]]
 
 
 # ## 1.2 返回矩阵的行数和列数
 
-# In[241]:
+# In[3]:
+
 
 # TODO 返回矩阵的行数和列数
 def shape(M):
@@ -63,7 +66,8 @@ def shape(M):
     return row, col
 
 
-# In[242]:
+# In[4]:
+
 
 # 运行以下代码测试你的 shape 函数
 get_ipython().magic(u'run -i -e test.py LinearRegressionTestCase.test_shape')
@@ -71,7 +75,8 @@ get_ipython().magic(u'run -i -e test.py LinearRegressionTestCase.test_shape')
 
 # ## 1.3 每个元素四舍五入到特定小数数位
 
-# In[10]:
+# In[5]:
+
 
 # TODO 每个元素四舍五入到特定小数数位
 # 直接修改参数矩阵，无返回值
@@ -83,7 +88,8 @@ def matxRound(M, decPts=4):
             M[r][c] = round(M[r][c], decPts)
 
 
-# In[36]:
+# In[6]:
+
 
 # 运行以下代码测试你的 matxRound 函数
 get_ipython().magic(u'run -i -e test.py LinearRegressionTestCase.test_matxRound')
@@ -91,11 +97,12 @@ get_ipython().magic(u'run -i -e test.py LinearRegressionTestCase.test_matxRound'
 
 # ## 1.4 计算矩阵的转置
 
-# In[249]:
+# In[7]:
+
 
 # TODO 计算矩阵的转置
 def transpose(M):
-    
+    '''
     matrix = []
     row, col = shape(M)
     
@@ -109,9 +116,16 @@ def transpose(M):
         matrix.append(m)
         
     return matrix
+    '''
+    #zip()函数将可迭代对象打包为成一个个元组
+    #zip(*M)与zip()相反，将元组解压为二维矩阵
+    #再用列表推导式遍历解压的二维矩阵，并将遍历出的元组转换为list对象
+    return [list(col) for col in zip(*M)]
+    
 
 
-# In[248]:
+# In[8]:
+
 
 # 运行以下代码测试你的 transpose 函数
 get_ipython().magic(u'run -i -e test.py LinearRegressionTestCase.test_transpose')
@@ -119,7 +133,8 @@ get_ipython().magic(u'run -i -e test.py LinearRegressionTestCase.test_transpose'
 
 # ## 1.5 计算矩阵乘法 AB
 
-# In[270]:
+# In[9]:
+
 
 # TODO 计算矩阵乘法 AB，如果无法相乘则raise ValueError
 def matxMultiply(A, B):
@@ -130,7 +145,8 @@ def matxMultiply(A, B):
     #矩阵A的列数等于矩阵B的行数才能相乘
     if col_a != row_b:
         raise ValueError
-        
+    
+    '''
     matrix = []
     
     #乘积的行数等于矩阵A的行数，乘积的列数等于矩阵B的列数
@@ -143,9 +159,16 @@ def matxMultiply(A, B):
         matrix.append(m)
         
     return matrix
+    '''
+    
+    #将B进行转置,即B_T的行为B的列
+    B_T = transpose(B)
+    #遍历A的行与B_T的行的元素，返回乘积的和所构成的列表
+    return [[sum((a*b) for a, b in zip(row, col)) for col in B_T] for row in A]
 
 
-# In[271]:
+# In[10]:
+
 
 # 运行以下代码测试你的 matxMultiply 函数
 get_ipython().magic(u'run -i -e test.py LinearRegressionTestCase.test_matxMultiply')
@@ -178,19 +201,25 @@ get_ipython().magic(u'run -i -e test.py LinearRegressionTestCase.test_matxMultip
 #     ...    & ... & ... & ...& ...\\
 #     a_{n1}    & a_{n2} & ... & a_{nn} & b_{n} \end{bmatrix}$
 
-# In[7]:
+# In[11]:
+
 
 # TODO 构造增广矩阵，假设A，b行数相同
 def augmentMatrix(A, b):
-    
+    '''
     matrix = []
     for row in range(len(A)):
         matrix.append(A[row]+b[row])
 
     return matrix
+    '''
+    
+    #使用列表推导式简化实现
+    return [row_a + row_b for row_a, row_b in zip(A, b)]
 
 
-# In[121]:
+# In[12]:
+
 
 # 运行以下代码测试你的 augmentMatrix 函数
 get_ipython().magic(u'run -i -e test.py LinearRegressionTestCase.test_augmentMatrix')
@@ -201,7 +230,8 @@ get_ipython().magic(u'run -i -e test.py LinearRegressionTestCase.test_augmentMat
 # - 把某行乘以一个非零常数
 # - 把某行加上另一行的若干倍：
 
-# In[75]:
+# In[13]:
+
 
 # TODO r1 <---> r2
 # 直接修改参数矩阵，无返回值
@@ -212,13 +242,15 @@ def swapRows(M, r1, r2):
     M[r1], M[r2] = M[r2], M[r1]
 
 
-# In[76]:
+# In[14]:
+
 
 # 运行以下代码测试你的 swapRows 函数
 get_ipython().magic(u'run -i -e test.py LinearRegressionTestCase.test_swapRows')
 
 
-# In[67]:
+# In[15]:
+
 
 # TODO r1 <--- r1 * scale
 # scale为0是非法输入，要求 raise ValueError
@@ -231,13 +263,15 @@ def scaleRow(M, r, scale):
     M[r] = [value*scale for value in M[r]]
 
 
-# In[134]:
+# In[16]:
+
 
 # 运行以下代码测试你的 scaleRow 函数
 get_ipython().magic(u'run -i -e test.py LinearRegressionTestCase.test_scaleRow')
 
 
-# In[15]:
+# In[17]:
+
 
 # TODO r1 <--- r1 + r2*scale
 # 直接修改参数矩阵，无返回值
@@ -246,7 +280,8 @@ def addScaledRow(M, r1, r2, scale):
     M[r1] = [a+b*scale for a,b in zip(M[r1], M[r2])]
 
 
-# In[146]:
+# In[18]:
+
 
 # 运行以下代码测试你的 addScaledRow 函数
 get_ipython().magic(u'run -i -e test.py LinearRegressionTestCase.test_addScaledRow')
@@ -280,7 +315,8 @@ get_ipython().magic(u'run -i -e test.py LinearRegressionTestCase.test_addScaledR
 # 
 # 为了充分了解Gaussian Jordan消元法的计算流程，请根据Gaussian Jordan消元法，分别手动推演矩阵A为***可逆矩阵***，矩阵A为***奇异矩阵***两种情况。
 
-# In[171]:
+# In[19]:
+
 
 # 不要修改这里！
 from helper import *
@@ -332,7 +368,8 @@ printInMatrixFormat(Ab,padding=4,truncating=0)
 #     0 & 0 & 1 & 0 & \frac{1835}{1086}\\
 #     0 & 0 & 0 & 1 & \frac{213}{181}\end{bmatrix}$
 
-# In[148]:
+# In[20]:
+
 
 # 不要修改这里！
 A = generateMatrix(4,seed,singular=True)
@@ -378,7 +415,8 @@ printInMatrixFormat(Ab,padding=4,truncating=0)
 
 # ### 2.3.3 实现 Gaussian Jordan 消元法
 
-# In[243]:
+# In[21]:
+
 
 # TODO 实现 Gaussain Jordan 方法求解 Ax = b
 
@@ -423,14 +461,19 @@ def gj_Solve(A, b, decPts=4, epsilon = 1.0e-16):
         scaleRow(Matrix, r, 1./scale)
 
         #3.2.3 将列c的其他元素消为0
-        [addScaledRow(Matrix, r1, r, -Matrix[r1][r]) for r1 in range(row) if r != r1]
+        #[addScaledRow(Matrix, r1, r, -Matrix[r1][r]) for r1 in range(row) if r != r1]
+        
+        for r1 in range(row):
+            if r != r1:
+                addScaledRow(Matrix, r1, r, -Matrix[r1][r])
    
     matxRound(Matrix, decPts)
 
     return [[b[col]] for b in Matrix]
 
 
-# In[244]:
+# In[22]:
+
 
 # 运行以下代码测试你的 gj_Solve 函数
 get_ipython().magic(u'run -i -e test.py LinearRegressionTestCase.test_gj_Solve')
@@ -458,13 +501,95 @@ get_ipython().magic(u'run -i -e test.py LinearRegressionTestCase.test_gj_Solve')
 # - 考虑矩阵 Y 和 矩阵 A 的行列式
 # - 考虑矩阵 A 的某一列是其他列的线性组合
 
-# TODO 证明：
+# 证明：若A为非奇异的，则另$B=A^{-1}$，且B采用与A相同的方法分块，因为
+# 
+# $BA=I=AB$
+# 
+# 则可得
+# $\begin{bmatrix}
+# B_{11} & B_{12}\\
+# B_{21} & B_{22}
+# \end{bmatrix}
+# \begin{bmatrix}
+# I & X \\
+# Z & Y
+# \end{bmatrix}
+# =
+# \begin{bmatrix}
+# I_k & Z \\
+# Z & I_{n-k}
+# \end{bmatrix}
+# =
+# \begin{bmatrix}
+# I & X \\
+# Z & Y
+# \end{bmatrix}
+# \begin{bmatrix}
+# B_{11} & B_{12}\\
+# B_{21} & B_{22}
+# \end{bmatrix}
+# $
+# 
+# $
+# =>
+# \begin{bmatrix}
+# B_{11}I+B_{12}Z & B_{11}X+B_{12}Y\\
+# B_{21}I+B_{22}Z & B_{21}X+B_{22}Y
+# \end{bmatrix}
+# =
+# \begin{bmatrix}
+# I_k & Z \\
+# Z & I_{n-k}
+# \end{bmatrix}
+# =
+# \begin{bmatrix}
+# IB_{11}+XB_{21} & IB_{12}+XB_{22}\\
+# ZB_{11}+YB_{21} & ZB_{12}+YB_{22}
+# \end{bmatrix}
+# $
+# 
+# $
+# =>
+# \begin{bmatrix}
+# B_{11} & B_{11}X+B_{12}Y\\
+# B_{21} & B_{21}X+B_{22}Y
+# \end{bmatrix}
+# =
+# \begin{bmatrix}
+# I_k & Z \\
+# Z & I_{n-k}
+# \end{bmatrix}
+# =
+# \begin{bmatrix}
+# B_{11}+XB_{21} & B_{12}+XB_{22} \\
+# YB_{21} & YB_{22}
+# \end{bmatrix}
+# $
+# 
+# 因此
+# 
+# $
+# B_{11} = I_k = B_{11}+XB_{21}=>B_{11}=I_k, B_{21}=Z\\
+# B_{21}X+B_{22}Y = I_{n-k} = YB_{22}=>YB_{22} = I_{n-k}
+# $
+# 
+# 要使等式成立，则必须满足Y为非奇异矩阵
+# 
+# 然而由已知条件可知，Y的第一列为全0
+# 
+# $det(Y)=y_{11}Y_{11}+y_{12}Y_{12}+...+y_{1n}Y_{1n}=0$，Y为奇异矩阵，
+# 
+# 即Y没有逆，无法使$YB_{22}=I_{n-k}$成立
+# 
+# 因此以上假设不成立，则A为奇异矩阵
+# 
 
 # # 3  线性回归
 
 # ## 3.1 随机生成样本点
 
-# In[166]:
+# In[23]:
+
 
 # 不要修改这里！
 # 运行一次就够了！
@@ -486,7 +611,8 @@ plt.show()
 # 
 # ### 3.2.1 猜测一条直线
 
-# In[230]:
+# In[24]:
+
 
 #TODO 请选择最适合的直线 y = mx + b
 m = 3.22
@@ -512,7 +638,8 @@ plt.show()
 # MSE = \frac{1}{n}\sum_{i=1}^{n}{(y_i - mx_i - b)^2}
 # $$
 
-# In[224]:
+# In[25]:
+
 
 # TODO 实现以下函数并输出所选直线的MSE
 
@@ -632,7 +759,8 @@ print(calculateMSE(X,Y,m,b))
 # 
 # 在3.3 中，我们知道线性回归问题等价于求解 $X^TXh = X^TY$ (如果你选择不做3.3，就勇敢的相信吧，哈哈)
 
-# In[278]:
+# In[26]:
+
 
 # TODO 实现线性回归
 '''
@@ -656,7 +784,8 @@ print(m,b)
 # 你求得的回归结果是什么？
 # 请使用运行以下代码将它画出来。
 
-# In[279]:
+# In[27]:
+
 
 # 请不要修改下面的代码
 x1,x2 = -5,5
@@ -673,12 +802,14 @@ plt.show()
 
 # 你求得的回归结果对当前数据集的MSE是多少？
 
-# In[280]:
+# In[28]:
+
 
 calculateMSE(X, Y, m, b)
 
 
 # In[ ]:
+
 
 
 
